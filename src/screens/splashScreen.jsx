@@ -22,7 +22,7 @@ export default function splashScreen({ navigation }) {
         >
           <Image
             style={{ width: 54.7, height: 63.61 }}
-            source={require("../assets/SplashLogo.png")}
+            source={require("../../assets/SplashLogo.png")}
           />
           <View
             style={{

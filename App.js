@@ -9,7 +9,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="SingIn"
+        initialRouteName="splashScreen"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="splashScreen" component={splashScreen} />

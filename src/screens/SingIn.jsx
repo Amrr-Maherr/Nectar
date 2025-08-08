@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 
 export default function SingIn({ navigation }) {
     const [mobileNumber, setMobileNumber] = useState(null)
+    // handleSignIn: Responsible for handling the sign-in process.
+    // This function will trigger the authentication flow for the selected provider
     const handelSighIn = () => {
         if (!mobileNumber) {
             Alert.alert(
@@ -27,9 +29,6 @@ export default function SingIn({ navigation }) {
             navigation.navigate("splashScreen");
         }
     }
-    // useEffect(() => {
-    //   handelSighIn();
-    // }, [mobileNumber]);
     return (
       <>
         <View

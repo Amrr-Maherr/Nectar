@@ -26,7 +26,7 @@ export default function SingIn({ navigation }) {
               { cancelable: true }
             );
         } else {
-            navigation.navigate("splashScreen");
+            navigation.navigate("MobileNumber");
         }
     }
     return (

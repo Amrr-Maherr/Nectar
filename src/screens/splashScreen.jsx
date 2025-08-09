@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { Text, View, Image } from "react-native";
 
-export default function splashScreen({ navigation }) {
+export default function SplashScreen({ navigation }) {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.replace("onbording");
-        }, 300)
+        }, 3000)
         return () => clearTimeout(timer);
     },[])
     return (

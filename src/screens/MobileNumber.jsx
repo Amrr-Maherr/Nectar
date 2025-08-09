@@ -26,7 +26,7 @@ export default function MobileNumber({ navigation }) {
       );
     } else {
       // setTimeout(() => {
-      navigation.navigate("SelectLocation");
+      navigation.navigate("Verification");
       // },3000)
     }
   };
@@ -68,8 +68,10 @@ export default function MobileNumber({ navigation }) {
           ></BlurView>
         </View>
         <View>
-          <Text>
             <Button
+            onPress={()=>{
+                navigation.navigate("SingIn");
+            }}
               w={40}
               h={40}
               icon={
@@ -80,7 +82,6 @@ export default function MobileNumber({ navigation }) {
                 />
               }
             />
-          </Text>
         </View>
         <View style={{ marginTop: 65.19, marginBottom: 27.58 }}>
           <Text style={{ fontSize: 26, fontWeight: "500", color: "#181725" }}>

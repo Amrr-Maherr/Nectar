@@ -125,7 +125,6 @@ const areas = [
           </Text>
         </View>
 
-
         <View style={{ marginBottom: 30 }}>
           <Text style={{ fontSize: 16, color: "#7C7C7C", marginBottom: 5 }}>
             Your Zone
@@ -173,9 +172,7 @@ const areas = [
             h={67}
             r={19}
             onPress={() => {
-              
-              console.log("Selected zone:", zone);
-              console.log("Selected area:", area);
+              navigation.navigate("SignUp");
             }}
           />
         </View>

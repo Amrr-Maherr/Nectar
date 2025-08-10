@@ -1,7 +1,7 @@
 import { Image, Text, TextInput, View } from "react-native";
 import Button from "../ui/Button";
 
-export default function SingUp() {
+export default function SingUp({navigation}) {
     return (
       <>
         <View
@@ -130,7 +130,9 @@ export default function SingUp() {
               }}
             >
               <Text style={{ fontSize: 14 }}>Don’t have an account?</Text>
-              <Text style={{ fontSize: 14, color: "#53B175" }}>Singup</Text>
+              <Text onPress={()=>{
+                navigation.navigate("Login")
+              }} style={{ fontSize: 14, color: "#53B175" }}>Singup</Text>
             </View>
           </View>
         </View>

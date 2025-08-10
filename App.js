@@ -6,13 +6,15 @@ import SingIn from "./src/screens/SingIn";
 import MobileNumber from "./src/screens/MobileNumber";
 import Verification from "./src/screens/Verification";
 import SelectLocation from "./src/screens/SelectLocation";
+import Login from "./src/screens/Login";
+import SingUp from "./src/screens/SingUp";
 
 const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="SplashScreen"
+        initialRouteName="SignUp"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
@@ -21,6 +23,8 @@ export default function App() {
         <Stack.Screen name="MobileNumber" component={MobileNumber} />
         <Stack.Screen name="Verification" component={Verification} />
         <Stack.Screen name="SelectLocation" component={SelectLocation} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SignUp" component={SingUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

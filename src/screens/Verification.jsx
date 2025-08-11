@@ -1,7 +1,6 @@
 import { Alert, Image, Pressable, TextInput, View } from "react-native";
 import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { BlurView } from "expo-blur";
 import Button from "../ui/Button";
 import FontAwesome5 from "react-native-vector-icons/MaterialIcons";
 import { useState } from "react";
@@ -31,114 +30,133 @@ export default function Verification({navigation}) {
        }
      };
     return (
-        <>
-          <SafeAreaView
+      <>
+        <SafeAreaView
+          style={{
+            paddingVertical: 8,
+            paddingHorizontal: 28,
+            position: "relative",
+            backgroundColor: "white",
+            flex: 1,
+          }}
+        >
+          <View
             style={{
-              paddingVertical: 8,
-              paddingHorizontal: 28,
-              position: "relative",
-              backgroundColor: "white",
-              flex: 1,
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              width: 414,
+              height: 233.1,
             }}
           >
+            <Image
+              style={{ width: "100%", height: "100%" }}
+              source={require("../../assets/Group 6806.png")}
+            />
+
             <View
               style={{
                 position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                width: 414,
-                height: 233.1,
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+              }}
+            ></View>
+          </View>
+          <View>
+            <Button
+              onPress={() => {
+                navigation.navigate("MobileNumber");
+              }}
+              w={40}
+              h={40}
+              icon={
+                <FontAwesome5
+                  name="navigate-before"
+                  size={44}
+                  color="#212121"
+                />
+              }
+            />
+          </View>
+          <View style={{ marginTop: 65.19, marginBottom: 27.58 }}>
+            <Text style={{ fontSize: 26, fontWeight: "500", color: "#181725" }}>
+              Enter your 4-digit code
+            </Text>
+          </View>
+          <View>
+            <Text style={{ color: "#7C7C7C", fontSize: 16, fontWeight: "500" }}>
+              Code
+            </Text>
+          </View>
+          <View>
+            <TextInput
+              onChange={(number) => {
+                setNumber(number);
+              }}
+              style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
+              placeholder="---"
+              keyboardType="numeric"
+              maxLength={4}
+            />
+          </View>
+          <View
+            style={{
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              marginTop: 222.59,
+              flexDirection: "row-reverse",
+            }}
+          >
+            <Pressable
+              onPress={() => {
+                handelNumber();
+              }}
+              style={{
+                width: 67,
+                height: 67,
+                marginLeft: "auto",
               }}
             >
               <Image
                 style={{ width: "100%", height: "100%" }}
-                source={require("../../assets/Group 6806.png")}
+                source={require("../../assets/NextButton.png")}
               />
-
-              <BlurView
-                intensity={30}
-                tint="light"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-              ></BlurView>
-            </View>
+            </Pressable>
             <View>
-              <Button
-                onPress={() => {
-                  navigation.navigate("MobileNumber");
-                }}
-                w={40}
-                h={40}
-                icon={
-                  <FontAwesome5
-                    name="navigate-before"
-                    size={44}
-                    color="#212121"
-                  />
-                }
-              />
-            </View>
-            <View style={{ marginTop: 65.19, marginBottom: 27.58 }}>
-              <Text
-                style={{ fontSize: 26, fontWeight: "500", color: "#181725" }}
-              >
-                Enter your 4-digit code
+              <Text style={{ fontSize: 18, color: "#53B175" }}>
+                Resend Code
               </Text>
             </View>
-            <View>
-              <Text
-                style={{ color: "#7C7C7C", fontSize: 16, fontWeight: "500" }}
-              >
-                Code
-              </Text>
-            </View>
-            <View>
-              <TextInput
-                onChange={(number) => {
-                  setNumber(number);
-                }}
-                style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
-                placeholder="---"
-                keyboardType="numeric"
-                maxLength={4}
-              />
-            </View>
+          </View>
+          <View
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              width: 414,
+              height: 233.1,
+            }}
+          >
+            <Image
+              style={{ width: "100%", height: "100%" }}
+              source={require("../../assets/Group 6806.png")}
+            />
             <View
               style={{
-                alignItems: "center",
-                justifyContent: "space-between",
+                position: "absolute",
+                inset: 0,
                 width: "100%",
-                marginTop: 222.59,
-                flexDirection: "row-reverse",
+                height: "100%",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
               }}
-            >
-              <Pressable
-                onPress={() => {
-                  handelNumber();
-                }}
-                style={{
-                  width: 67,
-                  height: 67,
-                  marginLeft: "auto",
-                }}
-              >
-                <Image
-                  style={{ width: "100%", height: "100%" }}
-                  source={require("../../assets/NextButton.png")}
-                />
-              </Pressable>
-              <View>
-                <Text style={{ fontSize: 18, color: "#53B175" }}>
-                  Resend Code
-                </Text>
-              </View>
-            </View>
-          </SafeAreaView>
-        </>
+            ></View>
+          </View>
+        </SafeAreaView>
+      </>
     );
 }

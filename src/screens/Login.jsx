@@ -42,7 +42,7 @@ export default function Login({ navigation }) {
             source={require("../../assets/Logo.png")}
           />
         </View>
-        <View style={{ marginTop: 100.21, paddingHorizontal: 25 }}>
+        <View style={{ marginTop: 100.21, paddingHorizontal: 25,zIndex:99 }}>
           <View style={{ marginBottom: 40 }}>
             <Text style={{ fontSize: 26, fontWeight: "600", marginBottom: 15 }}>
               Login
@@ -115,6 +115,28 @@ export default function Login({ navigation }) {
               Singin
             </Text>
           </View>
+        </View>
+        <View
+          style={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            height: 302.29,
+          }}
+        >
+          <Image
+            style={{ width: "100%", height: "100%" }}
+            source={require("../../assets/Group 6806.png")}
+          />
+          <View
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+            }}
+          ></View>
         </View>
       </View>
     </>

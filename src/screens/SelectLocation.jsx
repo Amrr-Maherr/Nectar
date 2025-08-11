@@ -1,6 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../ui/Button";
-import { BlurView } from "expo-blur";
 import { Image, Text, View } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/MaterialIcons";
 import { useState } from "react";
@@ -63,16 +62,15 @@ const areas = [
             source={require("../../assets/Group 6806.png")}
           />
 
-          <BlurView
-            intensity={30}
-            tint="light"
+          <View
             style={{
               position: "absolute",
               inset: 0,
               width: "100%",
               height: "100%",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
             }}
-          />
+          ></View>
         </View>
         <View>
           <Button
@@ -125,7 +123,7 @@ const areas = [
           </Text>
         </View>
 
-        <View style={{ marginBottom: 30 }}>
+        <View style={{ marginBottom: 30, zIndex: 99 }}>
           <Text style={{ fontSize: 16, color: "#7C7C7C", marginBottom: 5 }}>
             Your Zone
           </Text>
@@ -144,7 +142,7 @@ const areas = [
           />
         </View>
 
-        <View>
+        <View style={{ zIndex: 99 }}>
           <Text style={{ fontSize: 16, color: "#7C7C7C", marginBottom: 5 }}>
             Your Area
           </Text>
@@ -163,7 +161,7 @@ const areas = [
           />
         </View>
 
-        <View style={{ marginTop: 40 }}>
+        <View style={{ marginTop: 40, zIndex: 99 }}>
           <Button
             color="white"
             buttonText="Submit"
@@ -175,6 +173,28 @@ const areas = [
               navigation.navigate("SignUp");
             }}
           />
+        </View>
+        <View
+          style={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            height: 302.29,
+          }}
+        >
+          <Image
+            style={{ width: "100%", height: "100%" }}
+            source={require("../../assets/Group 6806.png")}
+          />
+          <View
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+            }}
+          ></View>
         </View>
       </SafeAreaView>
     </>

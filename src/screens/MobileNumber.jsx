@@ -56,32 +56,27 @@ export default function MobileNumber({ navigation }) {
             source={require("../../assets/Group 6806.png")}
           />
 
-          <BlurView
-            intensity={30}
-            tint="light"
+          <View
             style={{
               position: "absolute",
               inset: 0,
               width: "100%",
               height: "100%",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
             }}
-          ></BlurView>
+          ></View>
         </View>
         <View>
-            <Button
-            onPress={()=>{
-                navigation.navigate("SingIn");
+          <Button
+            onPress={() => {
+              navigation.navigate("SingIn");
             }}
-              w={40}
-              h={40}
-              icon={
-                <FontAwesome5
-                  name="navigate-before"
-                  size={44}
-                  color="#212121"
-                />
-              }
-            />
+            w={40}
+            h={40}
+            icon={
+              <FontAwesome5 name="navigate-before" size={44} color="#212121" />
+            }
+          />
         </View>
         <View style={{ marginTop: 65.19, marginBottom: 27.58 }}>
           <Text style={{ fontSize: 26, fontWeight: "500", color: "#181725" }}>
@@ -131,6 +126,30 @@ export default function MobileNumber({ navigation }) {
           <View>
             <Text style={{ fontSize: 18, color: "#53B175" }}>Resend Code</Text>
           </View>
+        </View>
+        <View
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            width: 414,
+            height: 233.1,
+          }}
+        >
+          <Image
+            style={{ width: "100%", height: "100%" }}
+            source={require("../../assets/Group 6806.png")}
+          />
+          <View
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+            }}
+          ></View>
         </View>
       </SafeAreaView>
     </>

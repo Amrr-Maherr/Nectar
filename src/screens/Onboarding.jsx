@@ -2,7 +2,7 @@ import { Image, ImageBackground, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../ui/Button";
 
-export default function Onboarding({navigation}) {
+export default function Onboarding({ navigation }) {
   return (
     <ImageBackground
       style={{ flex: 1 }}

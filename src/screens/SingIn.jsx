@@ -8,7 +8,7 @@ export default function SingIn({ navigation }) {
   // handleSignIn: Responsible for handling the sign-in process.
   // This function will trigger the authentication flow for the selected provider
   const handelSighIn = () => {
-    if (!mobileNumber) {
+    if (!mobileNumber || mobileNumber.length !== 11) {
       Alert.alert(
         "Error",
         "Please enter a valid phone number (11 digits).",
@@ -29,6 +29,7 @@ export default function SingIn({ navigation }) {
       navigation.navigate("MobileNumber");
     }
   };
+
   return (
     <>
       <View
@@ -76,7 +77,7 @@ export default function SingIn({ navigation }) {
           <View>
             <TextInput
               value={mobileNumber}
-              onChange={(number) => {
+              onChangeText={(number) => {
                 setMobileNumber(number);
               }}
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}

@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function MobileNumber({ navigation }) {
   const [Number, setNumber] = useState(null);
   const handelNumber = () => {
-    if (!Number) {
+    if (!Number || Number.length !== 11) {
       Alert.alert(
         "Error",
         "Please enter a valid phone number (11 digits).",
@@ -90,7 +90,7 @@ export default function MobileNumber({ navigation }) {
         </View>
         <View>
           <TextInput
-            onChange={(number) => {
+            onChangeText={(number) => {
               setNumber(number);
             }}
             style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}

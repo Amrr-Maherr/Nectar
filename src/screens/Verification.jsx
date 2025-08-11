@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Verification({navigation}) {
      const [Number, setNumber] = useState(null);
      const handelNumber = () => {
-       if (!Number) {
+       if (!Number || Number.length !== 4) {
          Alert.alert(
            "Error",
            "Please enter a valid code (4 digits).",
@@ -93,7 +93,7 @@ export default function Verification({navigation}) {
           </View>
           <View>
             <TextInput
-              onChange={(number) => {
+              onChangeText={(number) => {
                 setNumber(number);
               }}
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}

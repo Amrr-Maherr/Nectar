@@ -19,7 +19,7 @@ export default function Onboarding({ navigation }) {
         <View style={{ width: 48.47, height: 56.36 }}>
           <Image
             style={{ width: "100%", height: "100%" }}
-            source={require("../../assets/SplashLogo.png")}
+            source={require("../../assets/Logo.png")}
           />
         </View>
         <View

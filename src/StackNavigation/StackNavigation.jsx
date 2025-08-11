@@ -6,8 +6,7 @@ import Verification from "../screens/Verification";
 import SelectLocation from "../screens/SelectLocation";
 import Login from "../screens/Login";
 import SingUp from "../screens/SingUp";
-import Onboarding from "../screens/onboarding";
-
+import Onboarding from "../screens/Onboarding"
 
 const Stack = createStackNavigator();
 export default function StackNavigation() {

@@ -1,6 +1,6 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../ui/Button";
-import { Image, Text, View } from "react-native";
+import { Alert, Image, Text, View } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/MaterialIcons";
 import { useState } from "react";
 import { Dropdown } from "react-native-element-dropdown";
@@ -8,7 +8,17 @@ import { Dropdown } from "react-native-element-dropdown";
 export default function SelectLocation({ navigation }) {
   const [zone, setZone] = useState(null);
   const [area, setArea] = useState(null);
-
+  const handleLocation = () => {
+    if (!zone || !area) {
+      Alert.alert(
+        "Error",
+        "Please fill in both zone and area before proceeding.",
+        [{ text: "OK", style: "default" }]
+      );
+    } else {
+      navigation.navigate("SignUp");
+    }
+  };
 const zones = [
   { label: "Cairo", value: "cairo" },
   { label: "Alexandria", value: "alexandria" },
@@ -170,7 +180,7 @@ const areas = [
             h={67}
             r={19}
             onPress={() => {
-              navigation.navigate("SignUp");
+              handleLocation();
             }}
           />
         </View>

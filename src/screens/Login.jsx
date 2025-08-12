@@ -43,7 +43,7 @@ export default function Login({ navigation }) {
               inset: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.7)",
+              backgroundColor: "rgba(255, 255, 255, 0.25)",
             }}
           ></View>
         </View>
@@ -114,7 +114,7 @@ export default function Login({ navigation }) {
           <View style={{ marginTop: 30 }}>
             <Button
               onPress={() => {
-                Login()
+                Login();
               }}
               w="100%"
               buttonText="Log In"
@@ -163,7 +163,7 @@ export default function Login({ navigation }) {
               inset: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.7)",
+              backgroundColor: "rgba(255, 255, 255, 0.25)",
             }}
           ></View>
         </View>

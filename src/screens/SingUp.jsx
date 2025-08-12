@@ -46,7 +46,7 @@ export default function SingUp({ navigation }) {
                 inset: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                backgroundColor: "rgba(255, 255, 255, 0.25)",
               }}
             ></View>
           </View>
@@ -143,8 +143,8 @@ export default function SingUp({ navigation }) {
             </View>
             <View style={{ marginTop: 10 }}>
               <Button
-                 onPress={() => {
-                  SignIn()
+                onPress={() => {
+                  SignIn();
                 }}
                 w="100%"
                 buttonText="Sing Up"
@@ -193,7 +193,7 @@ export default function SingUp({ navigation }) {
                 inset: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                backgroundColor: "rgba(255, 255, 255, 0.25)",
               }}
             ></View>
           </View>

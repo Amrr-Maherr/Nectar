@@ -1,7 +1,27 @@
-import { Image, Text, TextInput, View } from "react-native";
+import { Alert, Image, Text, TextInput, View } from "react-native";
 import Button from "../ui/Button";
+import { useState } from "react";
 
 export default function Login({ navigation }) {
+    const [Email, setEmail] = useState(null);
+    const [Password, setPassword] = useState(null);
+    const Login = () => {
+      if (!Password || !Email) {
+        Alert.alert(
+          "Missing Information",
+          "Please fill in all the fields.",
+          [
+            {
+              text: "OK",
+              style: "default",
+            },
+          ],
+          { cancelable: true }
+        );
+      } else {
+        // navigation.replace("Login");
+      }
+    }
   return (
     <>
       <View style={{ flex: 1, backgroundColor: "white", position: "relative" }}>
@@ -42,7 +62,7 @@ export default function Login({ navigation }) {
             source={require("../../assets/Logo.png")}
           />
         </View>
-        <View style={{ marginTop: 100.21, paddingHorizontal: 25,zIndex:99 }}>
+        <View style={{ marginTop: 100.21, paddingHorizontal: 25, zIndex: 99 }}>
           <View style={{ marginBottom: 40 }}>
             <Text style={{ fontSize: 26, fontWeight: "600", marginBottom: 15 }}>
               Login
@@ -56,8 +76,11 @@ export default function Login({ navigation }) {
               Email
             </Text>
             <TextInput
+              onChangeText={(text) => {
+                setEmail(text);
+              }}
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
-              placeholder="Inter your phone number"
+              placeholder="Inter your Email"
               keyboardType="email-address"
               maxLength={11}
             />
@@ -67,8 +90,11 @@ export default function Login({ navigation }) {
               Password
             </Text>
             <TextInput
+              onChangeText={(text) => {
+                setPassword(text);
+              }}
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
-              placeholder="Inter your phone number"
+              placeholder="Inter your phone Password"
               maxLength={11}
               secureTextEntry={true}
             />
@@ -87,6 +113,9 @@ export default function Login({ navigation }) {
           </View>
           <View style={{ marginTop: 30 }}>
             <Button
+              onPress={() => {
+                Login()
+              }}
               w="100%"
               buttonText="Log In"
               h={67}

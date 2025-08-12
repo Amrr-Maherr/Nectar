@@ -1,7 +1,28 @@
-import { Image, Text, TextInput, View } from "react-native";
+import { Alert, Image, Text, TextInput, View } from "react-native";
 import Button from "../ui/Button";
+import { useState } from "react";
 
-export default function SingUp({navigation}) {
+export default function SingUp({ navigation }) {
+  const [userName,setUserName] = useState(null)
+  const [Email, setEmail] = useState(null);
+  const [Password, setPassword] = useState(null);
+  const SignIn = () => {
+    if (!userName || !Email || !Password) {
+      Alert.alert(
+        "Missing Information",
+        "Please fill in all the fields.", 
+        [
+          {
+            text: "OK",
+            style: "default",
+          },
+        ],
+        { cancelable: true }
+      );
+    } else {
+      navigation.replace("Login");
+    }
+  }
     return (
       <>
         <View
@@ -66,8 +87,11 @@ export default function SingUp({navigation}) {
                 Username
               </Text>
               <TextInput
+                onChangeText={(text) => {
+                  setUserName(text);
+                }}
                 style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
-                placeholder="Inter your phone number"
+                placeholder="Inter your Username"
                 keyboardType="default"
               />
             </View>
@@ -78,8 +102,11 @@ export default function SingUp({navigation}) {
                 Email
               </Text>
               <TextInput
+                onChangeText={(text) => {
+                  setEmail(text);
+                }}
                 style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
-                placeholder="Inter your phone number"
+                placeholder="Inter your Email"
                 keyboardType="email-address"
               />
             </View>
@@ -90,8 +117,11 @@ export default function SingUp({navigation}) {
                 Password
               </Text>
               <TextInput
+                onChangeText={(text) => {
+                  setPassword(text);
+                }}
                 style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
-                placeholder="Inter your phone number"
+                placeholder="Inter your Password"
                 maxLength={11}
                 secureTextEntry={true}
               />
@@ -113,6 +143,9 @@ export default function SingUp({navigation}) {
             </View>
             <View style={{ marginTop: 10 }}>
               <Button
+                 onPress={() => {
+                  SignIn()
+                }}
                 w="100%"
                 buttonText="Sing Up"
                 h={67}

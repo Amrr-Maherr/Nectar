@@ -7,6 +7,7 @@ import SelectLocation from "../screens/SelectLocation";
 import Login from "../screens/Login";
 import SingUp from "../screens/SingUp";
 import Onboarding from "../screens/Onboarding"
+import Tabs from "../TabsNavigation/Tabs";
 
 const Stack = createStackNavigator();
 export default function StackNavigation() {
@@ -24,6 +25,7 @@ export default function StackNavigation() {
         <Stack.Screen name="SelectLocation" component={SelectLocation} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SingUp} />
+        <Stack.Screen name="Tabs" component={Tabs} />
       </Stack.Navigator>
     </>
   );

@@ -19,7 +19,7 @@ export default function Login({ navigation }) {
           { cancelable: true }
         );
       } else {
-        // navigation.replace("Login");
+        navigation.replace("Tabs");
       }
     }
   return (

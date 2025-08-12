@@ -1,9 +1,9 @@
-import { Pressable, Text } from "react-native";
+import { Pressable, Text, TouchableOpacity } from "react-native";
 
 export default function Button({ buttonText,bgColor,w,h,r,font,weight,color,icon,onPress }) {
   return (
     <>
-      <Pressable
+      <TouchableOpacity
         onPress={() => onPress()}
         style={{
           alignItems: "center",
@@ -28,7 +28,7 @@ export default function Button({ buttonText,bgColor,w,h,r,font,weight,color,icon
           {buttonText}
         </Text>
         <Text>{icon && icon}</Text>
-      </Pressable>
+      </TouchableOpacity>
     </>
   );
 }

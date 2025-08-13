@@ -12,52 +12,87 @@ const Tab = createBottomTabNavigator();
 
 export default function Tabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        options={{
-          headerShown: false,
+      <Tab.Navigator
+        screenOptions={{
+          tabBarLabelStyle: {
+            fontSize: 10,
+            fontWeight: "300",
+          },
           tabBarActiveTintColor: "#53B175",
-          title: "Shop",
-        }}
-        component={Home}
-      />
-      <Tab.Screen
-        name="Explore"
-        options={{
+          tabBarInactiveTintColor: "#7C7C7C",
           headerShown: false,
-          tabBarActiveTintColor: "#53B175",
-          title: "Explore",
         }}
-        component={Explore}
-      />
-      <Tab.Screen
-        name="Cart"
-        options={{
-          headerShown: false,
-          tabBarActiveTintColor: "#53B175",
-          title: "Cart",
-        }}
-        component={Cart}
-      />
-      <Tab.Screen
-        name="Favorite"
-        options={{
-          headerShown: false,
-          tabBarActiveTintColor: "#53B175",
-          title: "Favorite",
-        }}
-        component={Favorite}
-      />
-      <Tab.Screen
-        name="Account"
-        options={{
-          headerShown: false,
-          tabBarActiveTintColor: "#53B175",
-          title: "Account",
-        }}
-        component={Account}
-      />
-    </Tab.Navigator>
+      >
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            tabBarLabel: "Shop",
+            tabBarIcon: ({ focused, color, size }) => (
+              <Ionicons
+                name={focused ? "home" : "home-outline"}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Explore"
+          component={Explore}
+          options={{
+            tabBarLabel: "Explore",
+            tabBarIcon: ({ focused, color, size }) => (
+              <Ionicons
+                name={focused ? "search" : "search-outline"}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Cart"
+          component={Cart}
+          options={{
+            tabBarLabel: "Cart",
+            tabBarIcon: ({ focused, color, size }) => (
+              <Ionicons
+                name={focused ? "cart" : "cart-outline"}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Favorite"
+          component={Favorite}
+          options={{
+            tabBarLabel: "Favorite",
+            tabBarIcon: ({ focused, color, size }) => (
+              <Ionicons
+                name={focused ? "heart" : "heart-outline"}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Account"
+          component={Account}
+          options={{
+            tabBarLabel: "Account",
+            tabBarIcon: ({ focused, color, size }) => (
+              <Ionicons
+                name={focused ? "person" : "person-outline"}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+      </Tab.Navigator>
   );
 }

@@ -8,6 +8,7 @@ import Login from "../screens/Login";
 import SingUp from "../screens/SingUp";
 import Onboarding from "../screens/Onboarding"
 import Tabs from "../TabsNavigation/Tabs";
+import OrderAccepted from "../screens/OrderAccepted";
 
 const Stack = createStackNavigator();
 export default function StackNavigation() {
@@ -26,6 +27,7 @@ export default function StackNavigation() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SingUp} />
         <Stack.Screen name="Tabs" component={Tabs} />
+        <Stack.Screen name="OrderAccepted" component={OrderAccepted} />
       </Stack.Navigator>
     </>
   );

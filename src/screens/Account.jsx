@@ -57,7 +57,7 @@ export default function Account({ navigation }) {
           paddingHorizontal: 25,
           paddingTop: 31,
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           flexDirection: "row-reverse",
           gap: 20,
         }}
@@ -66,13 +66,13 @@ export default function Account({ navigation }) {
           <View
             style={{
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "flex-start",
               gap: 10,
               flexDirection: "row",
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "800", color: "#181725" }}>
-              Afsar Hossen
+              Afar Hoses
             </Text>
             <EvilIcons name="pencil" size={25} color="#53B175" />
           </View>
@@ -80,8 +80,12 @@ export default function Account({ navigation }) {
         </View>
         <View>
           <Image
-            style={{ width: 47.84, height: 55.64 }}
-            source={require("../../assets/Logo.png")}
+            style={{
+              width: 50,
+              height: 50,
+              borderRadius: 50,
+            }}
+            source={{ uri: "https://i.pravatar.cc/150?img=3" }}
           />
         </View>
       </View>

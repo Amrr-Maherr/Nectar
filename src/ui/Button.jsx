@@ -1,34 +1,42 @@
-import { Pressable, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
-export default function Button({ buttonText,bgColor,w,h,r,font,weight,color,icon,onPress }) {
+export default function Button({
+  buttonText,
+  bgColor,
+  w,
+  h,
+  r,
+  font,
+  weight,
+  color,
+  icon,
+  onPress,
+}) {
   return (
-    <>
-      <TouchableOpacity
-        onPress={() => onPress()}
+    <TouchableOpacity
+      onPress={onPress}
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: bgColor,
+        width: w,
+        height: h,
+        borderRadius: r,
+        paddingHorizontal: 25,
+      }}
+    >
+      {icon && <View style={{ marginRight: 10 }}>{icon}</View>}
+      <Text
         style={{
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: bgColor,
-          width: w,
-          height: h,
-          borderRadius: r,
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 10,
-          flexDirection: "row-reverse",
+          flex: 1,
+          textAlign: "center",
+          color: color,
+          fontSize: font,
+          fontWeight: weight,
         }}
       >
-        <Text
-          style={{
-            color: color,
-            fontSize: font,
-            fontWeight: weight,
-          }}
-        >
-          {buttonText}
-        </Text>
-        <Text>{icon && icon}</Text>
-      </TouchableOpacity>
-    </>
+        {buttonText}
+      </Text>
+    </TouchableOpacity>
   );
 }

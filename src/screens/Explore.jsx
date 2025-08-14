@@ -80,7 +80,7 @@ export default function Explore() {
           </Text>
         </View>
         <View style={{ marginBottom: 30 }}>
-          <SearchBar/>
+          <SearchBar />
         </View>
         <FlatList
           showsVerticalScrollIndicator={false}
@@ -90,6 +90,9 @@ export default function Explore() {
           columnWrapperStyle={{
             justifyContent: "space-between",
             gap: 10,
+          }}
+          contentContainerStyle={{
+            paddingBottom: 80,
           }}
           renderItem={({ item }) => <CategoryCard category={item} />}
         />

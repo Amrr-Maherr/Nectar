@@ -12,10 +12,9 @@ export default function CategoryCard({category}) {
             Height: 189,
             backgroundColor: category.bgColor || "red",
             borderRadius: 18,
-            marginTop:10,
-            paddingHorizontal:20,
+            marginBottom:10,
             paddingVertical: 15,
-            borderColor:category.border,
+            borderColor:category.border || "white",
             borderWidth:1
           }}
         >

@@ -1,6 +1,7 @@
 import { FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CategoryCard from "../Components/CategoryCard";
+import SearchBar from "../Components/SearchBar";
 
 export default function Explore() {
   const hexToRgba = (hex, alpha) => {
@@ -77,6 +78,9 @@ export default function Explore() {
           >
             Find Products
           </Text>
+        </View>
+        <View style={{ marginBottom: 30 }}>
+          <SearchBar/>
         </View>
         <FlatList
           showsVerticalScrollIndicator={false}

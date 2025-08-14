@@ -23,7 +23,7 @@ export default function Tabs() {
           headerShown: false,
         }}
       >
-        {/* <Tab.Screen
+        <Tab.Screen
           name="Home"
           component={Home}
           options={{
@@ -36,7 +36,7 @@ export default function Tabs() {
               />
             ),
           }}
-        /> */}
+        />
         <Tab.Screen
           name="Explore"
           component={Explore}
@@ -51,7 +51,7 @@ export default function Tabs() {
             ),
           }}
         />
-        {/* <Tab.Screen
+        <Tab.Screen
           name="Cart"
           component={Cart}
           options={{
@@ -92,7 +92,7 @@ export default function Tabs() {
               />
             ),
           }}
-        /> */}
+        />
       </Tab.Navigator>
   );
 }

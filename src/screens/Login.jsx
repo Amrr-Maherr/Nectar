@@ -1,15 +1,43 @@
 import { Alert, Image, Text, TextInput, View } from "react-native";
 import Button from "../ui/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Login({ navigation }) {
     const [Email, setEmail] = useState(null);
-    const [Password, setPassword] = useState(null);
+  const [Password, setPassword] = useState(null);
+  const [Data, setData] = useState({})
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const value = await AsyncStorage.getItem("UserData");
+        if (value) {
+          setData(JSON.parse(value));
+          console.log(JSON.parse(value));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
     const Login = () => {
       if (!Password || !Email) {
         Alert.alert(
           "Missing Information",
           "Please fill in all the fields.",
+          [
+            {
+              text: "OK",
+              style: "default",
+            },
+          ],
+          { cancelable: true }
+        );
+      } else if (Data.Email !== Email || Data.Password !== Password) {
+        Alert.alert(
+          "Invalid Credentials",
+          "The email or password you entered is incorrect.",
           [
             {
               text: "OK",

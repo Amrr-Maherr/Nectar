@@ -1,11 +1,26 @@
 import { Alert, Image, Text, TextInput, View } from "react-native";
 import Button from "../ui/Button";
 import { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function SingUp({ navigation }) {
   const [userName,setUserName] = useState(null)
   const [Email, setEmail] = useState(null);
   const [Password, setPassword] = useState(null);
+    const StoreData = async () => {
+      const userData = {
+        userName,
+        Email,
+        Password,
+      };
+      try {
+        console.log(userData);
+        const Value = await AsyncStorage.setItem("UserData", JSON.stringify(userData));
+        navigation.replace("Login");
+      } catch (error) {
+        console.log(error);
+      }
+    };
   const SignIn = () => {
     if (!userName || !Email || !Password) {
       Alert.alert(
@@ -20,7 +35,10 @@ export default function SingUp({ navigation }) {
         { cancelable: true }
       );
     } else {
-      navigation.replace("Login");
+      setEmail("")
+      setPassword("")
+      setUserName("")
+      StoreData()
     }
   }
     return (

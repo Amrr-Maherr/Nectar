@@ -23,7 +23,7 @@ export default function Tabs() {
           headerShown: false,
         }}
       >
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Home"
           component={Home}
           options={{
@@ -78,7 +78,7 @@ export default function Tabs() {
               />
             ),
           }}
-        />
+        /> */}
         <Tab.Screen
           name="Account"
           component={Account}

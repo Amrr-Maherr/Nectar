@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useEffect, useState } from "react"
 
 export default function UseGetUserData() {
-    const [Data, setData] = useState({})
+    const [Data, setData] = useState(null)
     const [Error,setError] = useState(null)
     const [Loading,setLoading] = useState(true)
     const FetchData = async () => {

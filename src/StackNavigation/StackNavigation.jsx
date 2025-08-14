@@ -15,7 +15,7 @@ export default function StackNavigation() {
   return (
     <>
       <Stack.Navigator
-        initialRouteName="Login"
+        initialRouteName="SignUp"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="SplashScreen" component={SplashScreen} />

@@ -110,7 +110,6 @@ export default function Login({ navigation }) {
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
               placeholder="Inter your Email"
               keyboardType="email-address"
-              maxLength={11}
             />
           </View>
           <View>
@@ -122,8 +121,7 @@ export default function Login({ navigation }) {
                 setPassword(text);
               }}
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
-              placeholder="Inter your phone Password"
-              maxLength={11}
+              placeholder="Inter your Password"
               secureTextEntry={true}
             />
           </View>

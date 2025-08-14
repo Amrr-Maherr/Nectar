@@ -21,7 +21,6 @@ export default function Tabs() {
           backgroundColor: "white",
           position: "absolute",
           borderTopWidth: 0,
-          elevation: 0,
         },
         tabBarLabelStyle: {
           fontSize: 10,

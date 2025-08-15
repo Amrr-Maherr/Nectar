@@ -1,7 +1,7 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import Button from "../ui/Button";
 import AntDesign from "react-native-vector-icons/AntDesign";
-export default function ProductCard({Product}) {
+export default function ProductCard({Product,navigation}) {
     return (
       <>
         <View
@@ -16,14 +16,17 @@ export default function ProductCard({Product}) {
             marginRight: 15,
           }}
         >
-          <View
+          <TouchableOpacity
+            onPress={()=>{
+              navigation.navigate("Login")
+            }}
             style={{ width: "100%", height: 150, marginHorizontal: "auto" }}
           >
             <Image
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
               source={{ uri: Product.image }}
             />
-          </View>
+          </TouchableOpacity>
           <View style={{ padding: 15 }}>
             <View>
               <Text

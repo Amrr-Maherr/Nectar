@@ -88,8 +88,8 @@ export default function Home({ navigation }) {
                   paddingVertical: 20,
                 }}
               >
-                {GroceriesData.map((data,index) => (
-                    <GroceriesCard data={data} key={index} />
+                {GroceriesData.map((data, index) => (
+                  <GroceriesCard data={data} key={index} />
                 ))}
               </ScrollView>
               <SectionTitle
@@ -106,7 +106,11 @@ export default function Home({ navigation }) {
                 data={Data}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                  <ProductCard Product={item} style={{ marginRight: 15 }} />
+                  <ProductCard
+                    navigation={navigation}
+                    Product={item}
+                    style={{ marginRight: 15 }}
+                  />
                 )}
                 ListEmptyComponent={<Text>No data available</Text>}
                 showsHorizontalScrollIndicator={false}
@@ -125,7 +129,11 @@ export default function Home({ navigation }) {
                   data={Data}
                   keyExtractor={(item) => item.id.toString()}
                   renderItem={({ item }) => (
-                    <ProductCard Product={item} style={{ marginRight: 15 }} />
+                    <ProductCard
+                      navigation={navigation}
+                      Product={item}
+                      style={{ marginRight: 15 }}
+                    />
                   )}
                   ListEmptyComponent={<Text>No data available</Text>}
                   showsHorizontalScrollIndicator={false}

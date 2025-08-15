@@ -78,7 +78,7 @@ const areas = [
               inset: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.25)",
+              backgroundColor: "rgba(255, 255, 255, 0.74)",
             }}
           ></View>
         </View>
@@ -202,7 +202,7 @@ const areas = [
               inset: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.25)",
+              backgroundColor: "rgba(255, 255, 255, 0.74)",
             }}
           ></View>
         </View>

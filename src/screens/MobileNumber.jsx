@@ -62,7 +62,7 @@ export default function MobileNumber({ navigation }) {
               inset: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.25)",
+              backgroundColor: "rgba(255, 255, 255, 0.74)",
             }}
           ></View>
         </View>
@@ -147,7 +147,7 @@ export default function MobileNumber({ navigation }) {
               inset: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.25)",
+              backgroundColor: "rgba(255, 255, 255, 0.74)",
             }}
           ></View>
         </View>

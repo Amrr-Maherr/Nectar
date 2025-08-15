@@ -7,7 +7,7 @@ import EvilIcons from "react-native-vector-icons/EvilIcons";
 import Button from "../ui/Button";
 import UseGetUserData from "../Hooks/UseGetUserData";
 import Loader from "../Components/Loader"
-import useLogOut from "../Hooks/UseLogOut";
+import useLogOut from "../Hooks/useLogOut"
 export default function Account({ navigation }) {
   const { Loading, Data, Error } = UseGetUserData()
   const logOut = useLogOut({ navigation });

@@ -1,5 +1,6 @@
 import { Image, Text, View } from "react-native";
-
+import Button from "../ui/Button";
+import AntDesign from "react-native-vector-icons/AntDesign";
 export default function ProductCard({Product}) {
     return (
       <>
@@ -63,9 +64,16 @@ export default function ProductCard({Product}) {
               >
                 Review {Product.reviewCount}
               </Text>
-              <Image
+              {/* <Image
                 style={{ width: 45, height: 45 }}
                 source={require("../../assets/NextButton.png")}
+              /> */}
+              <Button
+                w={45.67}
+                h={45.67}
+                r={17}
+                bgColor="#53B175"
+                icon={<AntDesign name="plus" size={25} color="white" />}
               />
             </View>
           </View>

@@ -18,25 +18,28 @@ export default function Button({
       style={{
         flexDirection: "row",
         alignItems: "center",
+        justifyContent: "center",
         backgroundColor: bgColor,
         width: w,
         height: h,
         borderRadius: r,
-        paddingHorizontal: 25,
+        paddingHorizontal: 10,
       }}
     >
-      {icon && <View style={{ marginRight: 10 }}>{icon}</View>}
-      <Text
-        style={{
-          flex: 1,
-          textAlign: "center",
-          color: color,
-          fontSize: font,
-          fontWeight: weight,
-        }}
-      >
-        {buttonText}
-      </Text>
+      {icon && <View style={{ marginRight: buttonText ? 10 : 0 }}>{icon}</View>}
+      {buttonText && (
+        <Text
+          style={{
+            flex: 1,
+            textAlign: "center",
+            color: color,
+            fontSize: font,
+            fontWeight: weight,
+          }}
+        >
+          {buttonText}
+        </Text>
+      )}
     </TouchableOpacity>
   );
 }

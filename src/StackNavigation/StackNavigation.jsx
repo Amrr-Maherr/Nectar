@@ -9,13 +9,14 @@ import SingUp from "../screens/SingUp";
 import Onboarding from "../screens/Onboarding"
 import Tabs from "../TabsNavigation/Tabs";
 import OrderAccepted from "../screens/OrderAccepted";
+import ProductDetail from "../screens/ProductDetail";
 
 const Stack = createStackNavigator();
 export default function StackNavigation() {
   return (
     <>
       <Stack.Navigator
-        initialRouteName="SplashScreen"
+        initialRouteName="Tabs"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
@@ -28,6 +29,7 @@ export default function StackNavigation() {
         <Stack.Screen name="SignUp" component={SingUp} />
         <Stack.Screen name="Tabs" component={Tabs} />
         <Stack.Screen name="OrderAccepted" component={OrderAccepted} />
+        <Stack.Screen name="ProductDetail" component={ProductDetail} />
       </Stack.Navigator>
     </>
   );

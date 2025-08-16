@@ -18,7 +18,7 @@ export default function ProductCard({Product,navigation}) {
         >
           <TouchableOpacity
             onPress={()=>{
-              navigation.navigate( "Login")
+              navigation.navigate("ProductDetail", { product: Product });
             }}
             style={{ width: "100%", height: 150, marginHorizontal: "auto" }}
           >

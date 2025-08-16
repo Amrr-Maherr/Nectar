@@ -59,9 +59,6 @@ export default function RecipeDetail({ route }) {
             🔥 Calories per Serving: {product.caloriesPerServing}
           </Text>
         </View>
-        <View style={{ paddingVertical: 25 }}>
-          <Button buttonText="Add To Basket" bgColor="#53B175" h={67} r={19} color="white"/>
-        </View>
       </ScrollView>
     </SafeAreaView>
   );

@@ -1,86 +1,81 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import Button from "../ui/Button";
+import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
-export default function ProductCard({Product,navigation}) {
-    return (
-      <>
-        <View
-          style={{
-            borderColor: "#E2E2E2",
-            borderWidth: 1,
-            borderRadius: 19,
-            gap: 15,
-            width: 165,
-            marginVertical: 10,
-            overflow: "hidden",
-            marginRight: 15,
-          }}
-        >
-          <TouchableOpacity
-            onPress={()=>{
-              navigation.navigate("ProductDetail", { product: Product });
-            }}
-            style={{ width: "100%", height: 150, marginHorizontal: "auto" }}
-          >
-            <Image
-              style={{ objectFit: "cover", width: "100%", height: "100%" }}
-              source={{ uri: Product.image }}
-            />
-          </TouchableOpacity>
-          <View style={{ padding: 15 }}>
-            <View>
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontWeight: "500",
-                  color: "#181725",
-                  textAlign: "left",
-                  marginBottom: 2,
-                }}
-              >
-                {Product.name.slice(0, 10)}
-              </Text>
-              <Text
-                style={{
-                  fontSize: 14,
-                  fontWeight: "300",
-                  color: "#7C7C7C",
-                  textAlign: "left",
-                }}
-              >
-                Rating {Product.rating}
-              </Text>
-            </View>
-            <View
-              style={{
-                alignItems: "center",
-                justifyContent: "space-between",
-                flexDirection: "row",
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 12,
-                  fontWeight: "semibold",
-                  color: "#181725",
-                }}
-              >
-                Review {Product.reviewCount}
-              </Text>
-              {/* <Image
-                style={{ width: 45, height: 45 }}
-                source={require("../../assets/NextButton.png")}
-              /> */}
-              <Button
-                w={45.67}
-                h={45.67}
-                r={17}
-                bgColor="#53B175"
-                icon={<AntDesign name="plus" size={25} color="white" />}
-              />
-            </View>
-          </View>
+
+export default function ProductCard({ Product, navigation }) {
+  return (
+    <View style={styles.card}>
+      {/* Image */}
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("ProductDetail", { product: Product });
+        }}
+        style={styles.imageWrapper}
+      >
+        <Image style={styles.image} source={{ uri: Product.image }} />
+      </TouchableOpacity>
+
+      {/* Info */}
+      <View style={styles.info}>
+        {/* Title */}
+        <Text style={styles.title}>{Product.name.slice(0, 15)}</Text>
+
+        {/* Rating */}
+        <View style={styles.ratingRow}>
+          <AntDesign name="star" size={14} color="#FFD700" />
+          <Text style={styles.ratingText}>{Product.rating}</Text>
+          <Text style={styles.reviewText}>({Product.reviewCount} reviews)</Text>
         </View>
-      </>
-    );
+      </View>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 16,
+    backgroundColor: "#fff",
+    width: 170,
+    marginVertical: 10,
+    marginRight: 15,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 6,
+    elevation: 4,
+  },
+  imageWrapper: {
+    width: "100%",
+    height: 150,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+  },
+  info: {
+    padding: 12,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#181725",
+    marginBottom: 6,
+  },
+  ratingRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  ratingText: {
+    fontSize: 14,
+    fontWeight: "500",
+    marginLeft: 4,
+    color: "#333",
+  },
+  reviewText: {
+    fontSize: 12,
+    color: "#7C7C7C",
+    marginLeft: 6,
+  },
+});

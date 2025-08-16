@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Home from "../screens/Home";
 import Explore from "../screens/Explore";
-import Cart from "../screens/Cart";
+import Recipes from "../screens/Recipes";
 import Favorite from "../screens/Favorite";
 import Account from "../screens/Account";
 
@@ -60,20 +60,20 @@ export default function Tabs() {
         }}
       />
       <Tab.Screen
-        name="Cart"
-        component={Cart}
+        name="Recipes"
+        component={Recipes}
         options={{
-          tabBarLabel: "Cart",
+          tabBarLabel: "Recipes",
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
-              name={focused ? "cart" : "cart-outline"}
+              name={focused ? "fast-food" : "fast-food-outline"}
               size={size}
               color={color}
             />
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Favorite"
         component={Favorite}
         options={{
@@ -86,7 +86,7 @@ export default function Tabs() {
             />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="Account"
         component={Account}

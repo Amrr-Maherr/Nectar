@@ -73,7 +73,7 @@ export default function Tabs() {
           ),
         }}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Favorite"
         component={Favorite}
         options={{
@@ -86,7 +86,7 @@ export default function Tabs() {
             />
           ),
         }}
-      /> */}
+      />
       <Tab.Screen
         name="Account"
         component={Account}

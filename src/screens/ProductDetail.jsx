@@ -1,9 +1,13 @@
 import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../ui/Button";
+import UseStoreData from "../Hooks/UseStoreData";
+import Loader from "../Components/Loader";
 
 export default function RecipeDetail({ route }) {
   const { product } = route.params;
+
+  const { Loading, Error, StoreData } = UseStoreData();
 
   if (!product) {
     return (
@@ -59,6 +63,23 @@ export default function RecipeDetail({ route }) {
             🔥 Calories per Serving: {product.caloriesPerServing}
           </Text>
         </View>
+
+        <View style={{ marginVertical: 10 }}>
+          <Button
+            buttonText={Loading ? "Saving..." : "Add to Favorites"}
+            w="100%"
+            h={47}
+            r={19}
+            bgColor="#53B175"
+            color="white"
+            onPress={() => StoreData(product)}
+          />
+        </View>
+        {Error && (
+          <Text style={{ color: "red", marginTop: 10, textAlign: "center" }}>
+            Failed to save recipe. Try again.
+          </Text>
+        )}
       </ScrollView>
     </SafeAreaView>
   );

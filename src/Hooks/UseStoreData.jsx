@@ -7,7 +7,9 @@ export default function UseStoreData() {
 
   const StoreData = async (recipe) => {
     try {
-      setLoading(true);
+      
+        setLoading(true);
+
 
       const existingData = await AsyncStorage.getItem("Recipes");
 
@@ -15,9 +17,10 @@ export default function UseStoreData() {
 
       recipes.push(recipe);
 
-      await AsyncStorage.setItem("Recipes", JSON.stringify(recipes));
-
+    await AsyncStorage.setItem("Recipes", JSON.stringify(recipes));
+    setTimeout(() => {
       setLoading(false);
+    }, 3000);
     } catch (error) {
       console.log(error);
       setError(error);

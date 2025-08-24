@@ -102,15 +102,12 @@ export default function Home({ navigation }) {
           renderItem={({ item }) =>
             item === 1 ? (
               <FlatList
+                contentContainerStyle={{ gap: 20 }}
                 horizontal
                 data={Data}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                  <ProductCard
-                    navigation={navigation}
-                    Product={item}
-                    style={{ marginRight: 15 }}
-                  />
+                  <ProductCard navigation={navigation} Product={item} />
                 )}
                 ListEmptyComponent={<Text>No data available</Text>}
                 showsHorizontalScrollIndicator={false}
@@ -125,6 +122,7 @@ export default function Home({ navigation }) {
                   navigation={navigation}
                 />
                 <FlatList
+                  contentContainerStyle={{ gap: 20 }}
                   horizontal
                   data={Data}
                   keyExtractor={(item) => item.id.toString()}
@@ -132,7 +130,6 @@ export default function Home({ navigation }) {
                     <ProductCard
                       navigation={navigation}
                       Product={item}
-                      style={{ marginRight: 15 }}
                     />
                   )}
                   ListEmptyComponent={<Text>No data available</Text>}

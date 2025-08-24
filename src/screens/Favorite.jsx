@@ -5,6 +5,7 @@ import Loader from "../Components/Loader";
 
 export default function Favorite({navigation}) {
   const { Data,Error,Loading } = UseFetchData();
+console.log(Data);
 
   return Loading ? <Loader/> : (<View
       style={{

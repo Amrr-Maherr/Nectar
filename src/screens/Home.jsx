@@ -69,7 +69,7 @@ export default function Home({ navigation }) {
               </View>
 
               <View style={{ marginBottom: 20 }}>
-                <SearchBar />
+                <SearchBar navigation={navigation} />
               </View>
 
               <Banner />
@@ -127,10 +127,7 @@ export default function Home({ navigation }) {
                   data={Data}
                   keyExtractor={(item) => item.id.toString()}
                   renderItem={({ item }) => (
-                    <ProductCard
-                      navigation={navigation}
-                      Product={item}
-                    />
+                    <ProductCard navigation={navigation} Product={item} />
                   )}
                   ListEmptyComponent={<Text>No data available</Text>}
                   showsHorizontalScrollIndicator={false}

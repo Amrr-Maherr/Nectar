@@ -25,8 +25,8 @@ export default function Recipes({navigation}) {
 
   return (
     <SafeAreaView style={{ flex: 1, padding: 16, backgroundColor: "white" }}>
-      <View style={{paddingVertical:10}}>
-        <SearchBar />
+      <View style={{ paddingVertical: 10 }}>
+        <SearchBar navigation={navigation} />
       </View>
       <FlatList
         data={Data}

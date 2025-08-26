@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import CategoryCard from "../Components/CategoryCard";
 import SearchBar from "../Components/SearchBar";
 
-export default function Explore() {
+export default function Explore({ navigation }) {
   const hexToRgba = (hex, alpha) => {
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
@@ -80,7 +80,7 @@ export default function Explore() {
           </Text>
         </View>
         <View style={{ marginBottom: 30 }}>
-          <SearchBar />
+          <SearchBar navigation={navigation} />
         </View>
         <FlatList
           showsVerticalScrollIndicator={false}

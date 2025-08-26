@@ -97,6 +97,7 @@ export default function MobileNumber({ navigation }) {
             placeholder="+020"
             keyboardType="numeric"
             maxLength={11}
+            placeholderTextColor="black"
           />
         </View>
         <View

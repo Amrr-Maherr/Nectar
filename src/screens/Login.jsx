@@ -110,6 +110,7 @@ export default function Login({ navigation }) {
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
               placeholder="Inter your Email"
               keyboardType="email-address"
+              placeholderTextColor="black"
             />
           </View>
           <View>
@@ -123,6 +124,7 @@ export default function Login({ navigation }) {
               style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
               placeholder="Inter your Password"
               secureTextEntry={true}
+              placeholderTextColor="black"
             />
           </View>
           <View style={{ marginTop: 20 }}>

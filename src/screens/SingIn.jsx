@@ -84,6 +84,7 @@ export default function SingIn({ navigation }) {
               placeholder="Inter your phone number"
               keyboardType="numeric"
               maxLength={11}
+              placeholderTextColor="black"
             />
           </View>
           <View

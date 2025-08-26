@@ -111,6 +111,7 @@ export default function SingUp({ navigation }) {
                 style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
                 placeholder="Inter your Username"
                 keyboardType="default"
+                placeholderTextColor="black"
               />
             </View>
             <View style={{ marginBottom: 20 }}>
@@ -126,6 +127,7 @@ export default function SingUp({ navigation }) {
                 style={{ borderBottomColor: "#E2E2E2", borderBottomWidth: 1 }}
                 placeholder="Inter your Email"
                 keyboardType="email-address"
+                placeholderTextColor="black"
               />
             </View>
             <View>
@@ -142,6 +144,7 @@ export default function SingUp({ navigation }) {
                 placeholder="Inter your Password"
                 maxLength={11}
                 secureTextEntry={true}
+                placeholderTextColor="black"
               />
             </View>
             <View style={{ marginTop: 20 }}>

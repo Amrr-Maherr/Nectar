@@ -28,7 +28,7 @@ export default function SearchBar({navigation}) {
         `https://dummyjson.com/recipes/search?q=${query}`
       );
       const data = await response.json();
-      setRecipes(data.recipes ? data.recipes : []);
+      setRecipes(data.recipes ? data.recipes.slice(0,3) : []);
     } catch (error) {
       console.error("Search error:", error);
       setRecipes([]);
@@ -71,13 +71,14 @@ export default function SearchBar({navigation}) {
           value={searchQuery}
           placeholder="Search for recipes..."
           style={{ flex: 1 }}
+          placeholderTextColor="black"
         />
         {loading && <ActivityIndicator size="small" color="#53B175" />}
       </View>
 
       {/* Search Results */}
       {searchQuery.length > 0 && (
-        <View style={{ marginTop: 10 }}>
+        <View style={{ marginTop: 10,position:"absolute",width:"100%",zIndex:99,backgroundColor:"white",top:50 }}>
           {recipes.length > 0 ? (
             <FlatList
               data={recipes}

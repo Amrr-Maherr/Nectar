@@ -100,6 +100,7 @@ export default function Verification({navigation}) {
               placeholder="---"
               keyboardType="numeric"
               maxLength={4}
+              placeholderTextColor="black"
             />
           </View>
           <View

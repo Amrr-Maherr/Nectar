@@ -8,7 +8,7 @@
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/fast-food.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,13 +17,19 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/fast-food.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.amr_maher.Nectar"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/fast-food.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7f12f9b5-2354-4140-8bb3-52d816a0b7f3"
+      }
     }
   }
 }

@@ -26,7 +26,7 @@ export default function Button({
         paddingHorizontal: 10,
       }}
     >
-      {icon && <View style={{ marginRight: buttonText ? 10 : 0 }}>{icon}</View>}
+      {icon && <View style={{ marginLeft: buttonText ? 35 : 0 }}>{icon}</View>}
       {buttonText && (
         <Text
           style={{

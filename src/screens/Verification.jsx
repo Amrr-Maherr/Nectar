@@ -65,17 +65,15 @@ export default function Verification({navigation}) {
               }}
             ></View>
           </View>
-          <View>
+          <View style={{alignItems:"flex-start"}}>
             <Button
               onPress={() => {
-                navigation.navigate("MobileNumber");
+                navigation.goBack();
               }}
-              w={40}
-              h={40}
               icon={
                 <FontAwesome5
                   name="navigate-before"
-                  size={44}
+                  size={30}
                   color="#212121"
                 />
               }

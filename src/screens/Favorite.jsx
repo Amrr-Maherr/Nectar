@@ -7,10 +7,13 @@ export default function Favorite({navigation}) {
   const { Data,Error,Loading } = UseFetchData();
 console.log(Data);
 
-  return Loading ? <Loader/> : (<View
+  return Loading ? (
+    <Loader />
+  ) : (
+    <View
       style={{
         flex: 1,
-        paddingTop: 50,
+        paddingTop: 30,
         paddingHorizontal: 15,
         backgroundColor: "white",
       }}
@@ -23,6 +26,7 @@ console.log(Data);
         </Text>
       </View>
       <FlatList
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           paddingBottom: 80,
         }}
@@ -67,5 +71,6 @@ console.log(Data);
           </TouchableOpacity>
         )}
       />
-    </View>)
+    </View>
+  );
 }

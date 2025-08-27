@@ -84,14 +84,21 @@ export default function Account({ navigation }) {
                   flexDirection: "row",
                 }}
               >
-                <Text
-                  style={{ fontSize: 20, fontWeight: "800", color: "#181725" }}
-                >
-                  {Data.userName}
-                </Text>
+                {Data?.userName && (
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: "800",
+                      color: "#181725",
+                    }}
+                  >
+                    {Data?.userName}
+                  </Text>
+                )}
+
                 <EvilIcons name="pencil" size={25} color="#53B175" />
               </View>
-              <Text>{Data.Email}</Text>
+              {Data?.Email && <Text>{Data?.Email}</Text>}
             </View>
             <View>
               <Image
@@ -105,11 +112,8 @@ export default function Account({ navigation }) {
             </View>
           </View>
           <View style={{ marginTop: 30 }}>
-            {ProfileDataArray.map((ele, index) => (
+            {ProfileDataArray?.map((ele, index) => (
               <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate(`${ele.link}`);
-                }}
                 key={index}
                 style={{
                   paddingVertical: 15,

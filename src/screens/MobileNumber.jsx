@@ -66,15 +66,13 @@ export default function MobileNumber({ navigation }) {
             }}
           ></View>
         </View>
-        <View>
+        <View style={{alignItems:"flex-start"}}>
           <Button
             onPress={() => {
-              navigation.navigate("SingIn");
+              navigation.goBack();
             }}
-            w={40}
-            h={40}
             icon={
-              <FontAwesome5 name="navigate-before" size={44} color="#212121" />
+              <FontAwesome5 name="navigate-before" size={30} color="#212121" />
             }
           />
         </View>
@@ -124,9 +122,6 @@ export default function MobileNumber({ navigation }) {
               source={require("../../assets/NextButton.png")}
             />
           </Pressable>
-          <View>
-            <Text style={{ fontSize: 18, color: "#53B175" }}>Resend Code</Text>
-          </View>
         </View>
         <View
           style={{

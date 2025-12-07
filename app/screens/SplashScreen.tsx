@@ -6,25 +6,27 @@ import { useRouter } from 'expo-router';
 export default function SplashScreen() {
   const router = useRouter();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      router.replace('/onboarding');
-    }, 2000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     router.replace('/onboarding');
+  //   }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.logoContainer}>
         <Image
-          source={require('../../assets/images/icon.png')}
+          source={require("../../assets/images/logo.png")}
           style={styles.logo}
           resizeMode="contain"
         />
-        <Text style={styles.title}>My App</Text>
-        <Text style={styles.subtitle}>Powered by TheMealDB</Text>
+        <View style={{alignItems:"center",justifyContent:"center"}}>
+          <Text style={styles.title}>Nectar</Text>
+          <Text style={styles.subtitle}>Powered by TheMealDB</Text>
+        </View>
       </View>
     </View>
   );
@@ -33,26 +35,27 @@ export default function SplashScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#53B175",
   },
   logoContainer: {
-    alignItems: 'center',
+    alignItems: "center",
+    flexDirection: "row",
+    gap:18
   },
   logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 20,
+    width: 54.7,
+    height: 63.61,
   },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 10,
+    fontSize: 52,
+    fontWeight: "bold",
+    color: "#FFFFFF",
+    marginBottom: 2,
   },
   subtitle: {
-    fontSize: 16,
-    color: '#666',
+    fontSize: 14,
+    color: "#FFFFFF",
   },
 });
